@@ -28,9 +28,18 @@
 .single_content {
   border-radius: 20px;
   margin: 21px 0;
-  width: calc(100% - 30px);
 }
 .single_art {
   width: 100%;
   border-radius: 20px;
+}
+
+/* Блок смены страниц */
+.pagination_box {
+  display: flex;
+  justify-content: center;
+}
+.pagination_btn {
+  height: 40px;
+  color: #ffffff;
 }

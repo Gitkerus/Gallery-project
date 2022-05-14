@@ -11,6 +11,7 @@ function App() {
       <Header />
       <SearchBars />
       <Content />
+      <Pagination />
     </>
   );
 }
