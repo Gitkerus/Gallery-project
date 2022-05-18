@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./Header";
 import SearchBars from "./SearchBars";
 import Content from "./Content";
+import PaginationTest from "./Pagination";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Header />
       <SearchBars />
       <Content />
-      <Pagination />
+      <PaginationTest />
     </>
   );
 }

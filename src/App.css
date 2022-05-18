@@ -24,10 +24,11 @@
 /* Блок галлереи картин */
 .content_box {
   margin: 45px 20px;
+  margin-bottom: 30px;
 }
 .single_content {
   border-radius: 20px;
-  margin: 21px 0;
+  margin: 20px 0;
 }
 .single_art {
   width: 100%;
@@ -38,8 +39,46 @@
 .pagination_box {
   display: flex;
   justify-content: center;
+  margin: 0 20px;
+  margin-bottom: 34px;
+  border-radius: 8px;
 }
 .pagination_btn {
-  height: 40px;
-  color: #ffffff;
+  flex-grow: 1;
+  height: 41px;
+  border: 1px solid #ffffff;
+}
+.btn_first {
+  border-radius: 8px 0 0 8px;
+}
+.btn_last {
+  border-radius: 0 8px 8px 0;
+}
+
+/* Смена стилей под ширину экрана */
+
+@media screen and (min-width: 768px) {
+  .header {
+    margin: 35px 34px;
+  }
+  .search_box {
+    display: flex;
+    justify-content: space-between;
+    margin: 35px 34px;
+    gap: 20px;
+  }
+  .search_box_btn {
+    flex: auto;
+  }
+  .content_box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0px 34px;
+    gap: 20px 20px;
+  }
+  .single_content {
+    flex: calc(50% - 27px);
+    margin: 0 0;
+  }
 }
