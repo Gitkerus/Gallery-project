@@ -15,7 +15,7 @@
   margin: 0 20px;
 }
 .search_box_btn {
-  height: 45px;
+  height: 43px;
   border: 1px solid #ffffff;
   border-radius: 8px;
   margin: 15px 0;
@@ -29,6 +29,8 @@
 .single_content {
   border-radius: 20px;
   margin: 20px 0;
+  background: url(./img/background_kitty.jpg) center/cover no-repeat;
+  height: 205px;
 }
 .single_art {
   width: 100%;
@@ -39,8 +41,8 @@
 .pagination_box {
   display: flex;
   justify-content: center;
-  margin: 0 20px;
-  margin-bottom: 34px;
+  margin: 0 20px 34px;
+  /* margin-bottom: 34px; */
   border-radius: 8px;
 }
 .pagination_btn {
@@ -64,11 +66,12 @@
   .search_box {
     display: flex;
     justify-content: space-between;
-    margin: 35px 34px;
+    margin: 0px 34px 45px;
     gap: 20px;
   }
   .search_box_btn {
     flex: auto;
+    margin: 0 0;
   }
   .content_box {
     display: flex;
@@ -78,7 +81,96 @@
     gap: 20px 20px;
   }
   .single_content {
+    height: 249px;
     flex: calc(50% - 27px);
     margin: 0 0;
   }
+  .pagination_box {
+    margin: 0px 34px;
+    margin-top: 35px;
+    margin-bottom: 54px;
+    width: 280px;
+    height: 41px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    margin: 35px 42px;
+  }
+  .search_box {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 42px 45px;
+    gap: 20px;
+  }
+  .search_box_btn {
+    flex: auto;
+  }
+  .content_box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0px 42px;
+    gap: 20px 20px;
+  }
+  .single_content {
+    height: 230px;
+    flex: calc(33.333% - 36px);
+    margin: 0 0;
+  }
+  .pagination_box {
+    margin: 0px 42px;
+    margin-top: 40px;
+    margin-bottom: 62px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .header {
+    margin: 35px 123px;
+  }
+  .search_box {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 123px 45px;
+  }
+  .search_box_btn {
+    flex: auto;
+  }
+  .content_box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0px 123px;
+    gap: 20px 20px;
+  }
+  .single_content {
+    height: 275px;
+    margin: 0 0;
+  }
+  .pagination_box {
+    margin: 0px 123px;
+    margin-top: 40px;
+    margin-bottom: 97px;
+  }
+}
+
+/* SCSS Some ssshit */
+.Input {
+  width: 265px;
+  height: 45px;
+  border: 1px solid black;
+  border-radius: 8px;
+  outline: none;
+  padding: 0 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: transparent;
+  color: black;
+}
+.Input--dark {
+  color: white;
+  border: 1px solid white;
 }
