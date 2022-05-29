@@ -1,21 +1,14 @@
 import React from "react";
-import SingleContent from "./SingleContent";
+import SingleContentTest from "./SingleContentTest";
 
 function Content() {
   return (
-    <section className="content_box">
-      <SingleContent />
-      <SingleContent />
-      <SingleContent />
-      <SingleContent />
-      <SingleContent />
-      <SingleContent />
-      <SingleContent />
-      <SingleContent />
-      <SingleContent />
-      <SingleContent />
-      <SingleContent />
-      <SingleContent />
+    <section className="content__box">
+      <SingleContentTest />
+      <SingleContentTest />
+      <SingleContentTest />
+      <SingleContentTest />
+      <SingleContentTest />
     </section>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-function SingleContent() {
+function SingleContentTest() {
   return (
     <div className="single_content">
       <img
@@ -12,4 +12,4 @@ function SingleContent() {
     </div>
   );
 }
-export default SingleContent;
+export default SingleContentTest;

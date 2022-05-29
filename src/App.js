@@ -1,18 +1,20 @@
 import React from "react";
-import { Range, Select, Pagination, Input } from "fwt-internship-uikit";
+import "fwt-internship-uikit/dist/index.css";
 import "./App.css";
 import Header from "./Header";
 import SearchBars from "./SearchBars";
-import Content from "./Content";
+import ContentList from "./Components/ContentList";
 import PaginationTest from "./Pagination";
+import FetchTest from "./FetchTest";
 
 function App() {
   return (
     <>
+      {/* <FetchTest /> */}
       <Header />
       <SearchBars />
-      <Content />
-      <PaginationTest />
+      <ContentList />
+      {/* <PaginationTest /> */}
     </>
   );
 }

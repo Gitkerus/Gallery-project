@@ -1,15 +1,10 @@
 import React from "react";
+import { Pagination } from "fwt-internship-uikit";
 
 function PaginationTest() {
   return (
     <div className="pagination_box">
-      <button className="pagination_btn btn_first"></button>
-      <button className="pagination_btn"></button>
-      <button className="pagination_btn"></button>
-      <button className="pagination_btn"></button>
-      <button className="pagination_btn"></button>
-      <button className="pagination_btn"></button>
-      <button className="pagination_btn btn_last"></button>
+      <Pagination />
     </div>
   );
 }
