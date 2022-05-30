@@ -7,6 +7,7 @@ const AppProvider = ({ children }) => {
   const [currentAuthor, setCurrentAuthor] = useState("Author");
   const [currentLocation, setCurrentLocation] = useState("Location");
 
+  // Fetch
   const [authors, setAuthors] = useState([]);
   const getAuthors = useCallback(async () => {
     const response = await fetch(baseUrl + "/authors");
@@ -37,6 +38,7 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         isDarkTheme,
+        setIsDarkTheme,
         baseUrl,
         locations,
         authors,

@@ -4,8 +4,7 @@ import "./App.css";
 import Header from "./Header";
 import SearchBars from "./SearchBars";
 import ContentList from "./Components/ContentList";
-import PaginationTest from "./Pagination";
-import FetchTest from "./FetchTest";
+import PaginationBox from "./PaginationBox";
 
 function App() {
   return (
@@ -14,6 +13,7 @@ function App() {
       <Header />
       <SearchBars />
       <ContentList />
+      <PaginationBox />
       {/* <PaginationTest /> */}
     </>
   );

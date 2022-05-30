@@ -12,6 +12,8 @@ function SearchBars() {
     setCurrentAuthor,
     currentLocation,
     setCurrentLocation,
+    inputValue,
+    setInputValue,
   } = useGlobalContext();
 
   // onChange/onClick
@@ -24,20 +26,18 @@ function SearchBars() {
 
   const handleOnClose = () => console.log("test");
 
-  // Fetch
-  // const getAuthors = useCallback(async () => {
-  //   const response = await fetch(baseUrl + "/authors");
-  //   const authors = await response.json();
-  //   setAuthors(authors);
-  // }, [baseUrl]);
-
-  // useEffect(() => {
-  //   getAuthors();
-  // }, [baseUrl, getAuthors]);
-
   return (
     <section className="filters__box">
-      <Input isDarkTheme={isDarkTheme} className="filters__box__single" />
+      <Input
+        type="text"
+        isDarkTheme={isDarkTheme}
+        className="filters__box__single input"
+        placeholder="Name"
+        value={inputValue}
+        onChange={(e) => {
+          setInputValue(e.target.value);
+        }}
+      />
       <Select
         isDarkTheme={isDarkTheme}
         options={authors}
@@ -56,7 +56,8 @@ function SearchBars() {
         isDarkTheme={isDarkTheme}
         className="filters__box__single"
         onClose={handleOnClose}
-      />
+        placeholder="Created"
+      ></Range>
     </section>
   );
 }
