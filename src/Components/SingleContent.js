@@ -1,5 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "../context";
+import PropTypes from "prop-types";
 
 function SingleContent({
   authorId,
@@ -32,4 +33,12 @@ function SingleContent({
     </div>
   );
 }
+
+SingleContent.propTypes = {
+  authorId: PropTypes.number,
+  locationId: PropTypes.number,
+  created: PropTypes.string,
+  imageUrl: PropTypes.string,
+  name: PropTypes.string,
+};
 export default SingleContent;

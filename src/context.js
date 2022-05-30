@@ -12,6 +12,7 @@ const AppProvider = ({ children }) => {
   const getAuthors = useCallback(async () => {
     const response = await fetch(baseUrl + "/authors");
     const authors = await response.json();
+
     setAuthors(authors);
   }, [baseUrl]);
 
@@ -23,11 +24,19 @@ const AppProvider = ({ children }) => {
   const getLocations = useCallback(async () => {
     const response = await fetch(baseUrl + "/locations");
     const locations = await response.json();
-    locations.map((item) => {
-      item.name = item.location;
-      return item;
+
+    const correctLocations = locations.map((item) => {
+      const { location, ...otherProps } = item;
+
+      const correctProps = {
+        name: location,
+        ...otherProps,
+      };
+
+      return correctProps;
     });
-    setLocations(locations);
+
+    setLocations(correctLocations);
   }, [baseUrl]);
 
   useEffect(() => {
