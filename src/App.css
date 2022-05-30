@@ -40,10 +40,7 @@ body {
   background: url(./img/background_kitty.jpg) center/cover no-repeat;
   height: 205px;
 }
-/* .single_art {
-  width: 100%;
-  border-radius: 20px;
-} */
+
 .single__content__tooltip {
   position: absolute;
   height: 145px;
@@ -54,6 +51,23 @@ body {
 
   transform: translateY(115px);
   transition: transform 0.5s;
+}
+.single__content__tooltip h2 {
+  margin: 3px 0 6px;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 18px;
+}
+.single__content__tooltip h3 {
+  margin: 0 0 5px;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 15px;
+}
+.single__content__tooltip h3 span {
+  text-transform: capitalize;
+  font-weight: 300;
+  font-size: 15px;
 }
 .single__content:hover .single__content__tooltip {
   transform: none;

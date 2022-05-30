@@ -4,9 +4,15 @@ import { useGlobalContext } from "./context";
 
 function SearchBars() {
   // context data & useState for select components
-  const { isDarkTheme, baseUrl } = useGlobalContext();
-  const [currentAuthor, setCurrentAuthor] = useState("Author");
-  const [currentLocation, setCurrentLocation] = useState("Location");
+  const {
+    isDarkTheme,
+    locations,
+    authors,
+    currentAuthor,
+    setCurrentAuthor,
+    currentLocation,
+    setCurrentLocation,
+  } = useGlobalContext();
 
   // onChange/onClick
   const handleChangeAuthor = (name) => {
@@ -19,31 +25,15 @@ function SearchBars() {
   const handleOnClose = () => console.log("test");
 
   // Fetch
-  const [authors, setAuthors] = useState([]);
-  const getAuthors = useCallback(async () => {
-    const response = await fetch(baseUrl + "/authors");
-    const authors = await response.json();
-    setAuthors(authors);
-  }, [baseUrl]);
+  // const getAuthors = useCallback(async () => {
+  //   const response = await fetch(baseUrl + "/authors");
+  //   const authors = await response.json();
+  //   setAuthors(authors);
+  // }, [baseUrl]);
 
-  useEffect(() => {
-    getAuthors();
-  }, [baseUrl, getAuthors]);
-
-  const [locations, setLocations] = useState([]);
-  const getLocations = useCallback(async () => {
-    const response = await fetch(baseUrl + "/locations");
-    const locations = await response.json();
-    locations.map((item) => {
-      item.name = item.location;
-      return item;
-    });
-    setLocations(locations);
-  }, [baseUrl]);
-
-  useEffect(() => {
-    getLocations();
-  }, [baseUrl, getLocations]);
+  // useEffect(() => {
+  //   getAuthors();
+  // }, [baseUrl, getAuthors]);
 
   return (
     <section className="filters__box">
