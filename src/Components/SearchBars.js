@@ -13,17 +13,14 @@ function SearchBars() {
     setCurrentAuthor,
     currentLocation,
     setCurrentLocation,
-    inputValue,
-    setInputValue,
+    inputNameValue,
+    setInputNameValue,
   } = useGlobalContext();
 
   // onChange/onClick
 
-  const handleOnClose = () => console.log("test");
-
-  const handleInputOnChange = (e) => {
-    setInputValue(e.target.value);
-  };
+  const handleOnClose = () =>
+    console.log("вызов функции принимающей новые параметры к fetch");
 
   return (
     <section className="filters__box">
@@ -32,8 +29,8 @@ function SearchBars() {
         isDarkTheme={isDarkTheme}
         className="filters__box__single input"
         placeholder="Name"
-        value={inputValue}
-        onChange={handleInputOnChange}
+        value={inputNameValue}
+        onChange={(e) => setInputNameValue(e.target.value)}
       />
       <Select
         isDarkTheme={isDarkTheme}

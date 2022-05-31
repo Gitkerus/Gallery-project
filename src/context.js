@@ -2,10 +2,14 @@ import React, { useState, useContext, useCallback, useEffect } from "react";
 
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const baseUrl = "https://test-front.framework.team";
+
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [currentAuthor, setCurrentAuthor] = useState("Author");
   const [currentLocation, setCurrentLocation] = useState("Location");
+  const [inputNameValue, setInputNameValue] = useState("");
+  const [inputRangeFromValue, setInputRangeFromValue] = useState("");
+  const [inputRangeBeforeValue, setInputRangeBeforeValue] = useState("");
 
   // Fetch
   const [authors, setAuthors] = useState([]);
@@ -49,6 +53,12 @@ const AppProvider = ({ children }) => {
         setCurrentAuthor,
         currentLocation,
         setCurrentLocation,
+        inputNameValue,
+        setInputNameValue,
+        inputRangeFromValue,
+        setInputRangeFromValue,
+        inputRangeBeforeValue,
+        setInputRangeBeforeValue,
       }}
     >
       {children}

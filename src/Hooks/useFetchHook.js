@@ -8,7 +8,7 @@ const createRequest = (path) => async (requestData) => {
   return responseData;
 };
 
-// фетч автором посредством отдельной функции принимающей path запроса
+// фетч автора посредством отдельной функции принимающей path запроса
 const getAuthors = (requestData) => createRequest("/authors");
 
 await getAuthors(data);
