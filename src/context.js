@@ -25,16 +25,10 @@ const AppProvider = ({ children }) => {
     const response = await fetch(baseUrl + "/locations");
     const locations = await response.json();
 
-    const correctLocations = locations.map((item) => {
-      const { location, ...otherProps } = item;
-
-      const correctProps = {
-        name: location,
-        ...otherProps,
-      };
-
-      return correctProps;
-    });
+    const correctLocations = locations.map((item) => ({
+      ...item,
+      name: item.location,
+    }));
 
     setLocations(correctLocations);
   }, [baseUrl]);

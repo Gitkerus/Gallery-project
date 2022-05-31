@@ -1,20 +1,23 @@
 import React from "react";
 import "fwt-internship-uikit/dist/index.css";
-import "./App.css";
-import Header from "./Header";
-import SearchBars from "./SearchBars";
+
+import Header from "./Components/Header";
+import SearchBars from "./Components/SearchBars";
 import ContentList from "./Components/ContentList";
-import PaginationBox from "./PaginationBox";
+import PaginationBox from "./Components/PaginationBox";
+import { useGlobalContext } from "./context";
+import "./App.css";
 
 function App() {
+  const { isDarkTheme } = useGlobalContext();
   return (
     <>
-      {/* <FetchTest /> */}
-      <Header />
-      <SearchBars />
-      <ContentList />
-      <PaginationBox />
-      {/* <PaginationTest /> */}
+      <div className={`${isDarkTheme ? "darkTheme" : "lightTheme"}`}>
+        <Header />
+        <SearchBars />
+        <ContentList />
+        <PaginationBox />
+      </div>
     </>
   );
 }

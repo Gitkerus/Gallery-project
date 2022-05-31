@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import { Range, Select, Input } from "fwt-internship-uikit";
-import { useGlobalContext } from "./context";
+import RangeInputs from "./RangeInputs";
+import { useGlobalContext } from "../context";
 
 function SearchBars() {
   // context data & useState for select components
@@ -17,14 +18,12 @@ function SearchBars() {
   } = useGlobalContext();
 
   // onChange/onClick
-  const handleChangeAuthor = (name) => {
-    setCurrentAuthor(name);
-  };
-  const handleChangeLocation = (name) => {
-    setCurrentLocation(name);
-  };
 
   const handleOnClose = () => console.log("test");
+
+  const handleInputOnChange = (e) => {
+    setInputValue(e.target.value);
+  };
 
   return (
     <section className="filters__box">
@@ -34,21 +33,19 @@ function SearchBars() {
         className="filters__box__single input"
         placeholder="Name"
         value={inputValue}
-        onChange={(e) => {
-          setInputValue(e.target.value);
-        }}
+        onChange={handleInputOnChange}
       />
       <Select
         isDarkTheme={isDarkTheme}
         options={authors}
-        onChange={handleChangeAuthor}
+        onChange={setCurrentAuthor}
         value={currentAuthor}
         className="filters__box__single"
       />
       <Select
         isDarkTheme={isDarkTheme}
         options={locations}
-        onChange={handleChangeLocation}
+        onChange={setCurrentLocation}
         value={currentLocation}
         className="filters__box__single"
       />
@@ -57,7 +54,9 @@ function SearchBars() {
         className="filters__box__single"
         onClose={handleOnClose}
         placeholder="Created"
-      ></Range>
+      >
+        <RangeInputs />
+      </Range>
     </section>
   );
 }

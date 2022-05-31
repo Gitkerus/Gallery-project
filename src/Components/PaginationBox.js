@@ -1,6 +1,6 @@
 import React from "react";
 import { Pagination } from "fwt-internship-uikit";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "../context";
 
 function PaginationBox() {
   const { isDarkTheme } = useGlobalContext();
