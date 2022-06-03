@@ -21,30 +21,30 @@ function ContentList() {
 
   const [paintings, setPaintings] = useState([]);
 
-  const newFunc = async () => {
-    const queryParams = {};
-
-    if (inputNameValue !== "") {
-      queryParams.q = `${inputNameValue}`;
-    }
-    const foundAuthor = authors.find((item) => item.name === currentAuthor);
-    if (currentAuthor !== "Author") {
-      queryParams.authorId = foundAuthor.id;
-    }
-    const foundLocation = locations.find(
-      (item) => item.location === currentLocation
-    );
-    if (currentLocation !== "Location") {
-      queryParams.locationId = foundLocation.id;
-    }
-    if (inputRangeFromValue !== "" && inputRangeBeforeValue !== "") {
-      queryParams.created_gte = `${inputRangeFromValue}`;
-      queryParams.created_lte = `${inputRangeBeforeValue}`;
-    }
-    return await loadPaintings(queryParams);
+  const createRequest = (queryParams) => {
+    return async () => {
+      if (inputNameValue !== "") {
+        queryParams.q = `${inputNameValue}`;
+      }
+      const foundAuthor = authors.find((item) => item.name === currentAuthor);
+      if (currentAuthor !== "Author") {
+        queryParams.authorId = foundAuthor.id;
+      }
+      const foundLocation = locations.find(
+        (item) => item.location === currentLocation
+      );
+      if (currentLocation !== "Location") {
+        queryParams.locationId = foundLocation.id;
+      }
+      if (inputRangeFromValue !== "" && inputRangeBeforeValue !== "") {
+        queryParams.created_gte = `${inputRangeFromValue}`;
+        queryParams.created_lte = `${inputRangeBeforeValue}`;
+      }
+      return await loadPaintings(queryParams);
+    };
   };
 
-  const loadFilteredPaintings = useCallback(newFunc, [
+  const loadFilteredPaintings = useCallback(createRequest({}), [
     authors,
     locations,
     currentAuthor,
@@ -64,40 +64,19 @@ function ContentList() {
     findPagesAmount();
   }, [findPagesAmount]);
 
-  const loadFilteredPaginatedPaintings = useCallback(async () => {
-    const queryParams = {
-      _limit: pageObjectsLimit,
-      _page: page,
-    };
-
-    if (inputNameValue !== "") {
-      queryParams.q = `${inputNameValue}`;
-    }
-    const foundAuthor = authors.find((item) => item.name === currentAuthor);
-    if (currentAuthor !== "Author") {
-      queryParams.authorId = foundAuthor.id;
-    }
-    const foundLocation = locations.find(
-      (item) => item.location === currentLocation
-    );
-    if (currentLocation !== "Location") {
-      queryParams.locationId = foundLocation.id;
-    }
-    if (inputRangeFromValue !== "" && inputRangeBeforeValue !== "") {
-      queryParams.created_gte = `${inputRangeFromValue}`;
-      queryParams.created_lte = `${inputRangeBeforeValue}`;
-    }
-    return await loadPaintings(queryParams);
-  }, [
-    authors,
-    locations,
-    currentAuthor,
-    currentLocation,
-    inputRangeFromValue,
-    inputRangeBeforeValue,
-    inputNameValue,
-    page,
-  ]);
+  const loadFilteredPaginatedPaintings = useCallback(
+    createRequest({ _limit: pageObjectsLimit, _page: page }),
+    [
+      authors,
+      locations,
+      currentAuthor,
+      currentLocation,
+      inputRangeFromValue,
+      inputRangeBeforeValue,
+      inputNameValue,
+      page,
+    ]
+  );
 
   const getPaintings = useCallback(async () => {
     const data = await loadFilteredPaginatedPaintings();
