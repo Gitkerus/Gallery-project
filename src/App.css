@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.appBox {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 .darkTheme {
   background-color: #000000;
 }
@@ -138,6 +143,10 @@
   width: 280px;
 }
 .PaginationPage {
+  font-weight: 500;
+  font-size: 18px;
+  height: 41px;
+  width: 41px;
   margin-bottom: 34px;
 }
 

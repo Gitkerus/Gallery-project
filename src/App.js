@@ -12,7 +12,9 @@ function App() {
   const { isDarkTheme } = useGlobalContext();
   return (
     <>
-      <div className={`${isDarkTheme ? "darkTheme" : "lightTheme"}`}>
+      <div
+        className={`${isDarkTheme ? "darkTheme appBox" : "lightTheme appBox"}`}
+      >
         <Header />
         <SearchBars />
         <ContentList />
