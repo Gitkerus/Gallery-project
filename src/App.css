@@ -134,6 +134,9 @@
 .pagination__box {
   margin: 0 20px 0;
 }
+.Pagination {
+  width: 280px;
+}
 .PaginationPage {
   margin-bottom: 34px;
 }

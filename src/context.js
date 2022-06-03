@@ -1,15 +1,18 @@
 import React, { useState, useContext, useCallback, useEffect } from "react";
 import { loadAuthors, loadLocations } from "./Api/apiRequests";
-import { baseUrl } from "./Constants/constants";
 
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+
   const [currentAuthor, setCurrentAuthor] = useState("Author");
   const [currentLocation, setCurrentLocation] = useState("Location");
   const [inputNameValue, setInputNameValue] = useState("");
   const [inputRangeFromValue, setInputRangeFromValue] = useState("");
   const [inputRangeBeforeValue, setInputRangeBeforeValue] = useState("");
+
+  const [pagesAmount, setPagesAmount] = useState("");
+  const [page, setPage] = useState(1);
 
   // Fetch
   const [authors, setAuthors] = useState([]);
@@ -43,7 +46,6 @@ const AppProvider = ({ children }) => {
       value={{
         isDarkTheme,
         setIsDarkTheme,
-        baseUrl,
         locations,
         authors,
         currentAuthor,
@@ -56,6 +58,10 @@ const AppProvider = ({ children }) => {
         setInputRangeFromValue,
         inputRangeBeforeValue,
         setInputRangeBeforeValue,
+        pagesAmount,
+        setPagesAmount,
+        page,
+        setPage,
       }}
     >
       {children}
