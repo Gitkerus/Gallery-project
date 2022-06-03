@@ -4,6 +4,7 @@ import { useGlobalContext } from "../context";
 import SingleContent from "./SingleContent";
 import { loadPaintings } from "../Api/apiRequests";
 import { pageObjectsLimit } from "../Constants/constants";
+import noMatchesFound from "../Assets/noMatchesFound.jpg";
 
 function ContentList() {
   const {
@@ -19,9 +20,8 @@ function ContentList() {
   } = useGlobalContext();
 
   const [paintings, setPaintings] = useState([]);
-  const [noPaginationPaintings, setNoPaginationPainting] = useState([]);
 
-  const loadFilteredPaintings = useCallback(async () => {
+  const newFunc = async () => {
     const queryParams = {};
 
     if (inputNameValue !== "") {
@@ -42,7 +42,9 @@ function ContentList() {
       queryParams.created_lte = `${inputRangeBeforeValue}`;
     }
     return await loadPaintings(queryParams);
-  }, [
+  };
+
+  const loadFilteredPaintings = useCallback(newFunc, [
     authors,
     locations,
     currentAuthor,
@@ -52,20 +54,10 @@ function ContentList() {
     inputNameValue,
   ]);
 
-  const getNoPaginationPainting = useCallback(async () => {
-    const data = await loadFilteredPaintings();
-    setNoPaginationPainting(data);
-  }, [loadFilteredPaintings]);
-
-  useEffect(() => {
-    getNoPaginationPainting();
-  }, [getNoPaginationPainting]);
-
   const findPagesAmount = useCallback(async () => {
     const data = await loadFilteredPaintings();
     const pages = Math.ceil(data.length / 12);
     setPagesAmount(pages);
-    console.log(pages);
   }, [loadFilteredPaintings]);
 
   useEffect(() => {
@@ -116,9 +108,22 @@ function ContentList() {
     getPaintings();
   }, [getPaintings]);
 
-  // if(paintings=[]){
-  //   return <NoContentFound />
-  // }
+  if (paintings.length === 0) {
+    return (
+      <section className="content__box">
+        <div
+          className="single__content"
+          style={{
+            background: `url(${noMatchesFound})center/cover no-repeat`,
+          }}
+        >
+          <div className="single__content__tooltip">
+            <h2>No matches found, change search parametrs</h2>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <>
