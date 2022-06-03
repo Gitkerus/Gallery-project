@@ -1,7 +1,7 @@
 {
-  "main.css": "/Gallery-project/static/css/main.3e8ee7c5.chunk.css",
-  "main.js": "/Gallery-project/static/js/main.172afe66.chunk.js",
-  "main.js.map": "/Gallery-project/static/js/main.172afe66.chunk.js.map",
+  "main.css": "/Gallery-project/static/css/main.5678bd06.chunk.css",
+  "main.js": "/Gallery-project/static/js/main.7048de8b.chunk.js",
+  "main.js.map": "/Gallery-project/static/js/main.7048de8b.chunk.js.map",
   "static/css/1.29296322.chunk.css": "/Gallery-project/static/css/1.29296322.chunk.css",
   "static/js/1.54eb6dea.chunk.js": "/Gallery-project/static/js/1.54eb6dea.chunk.js",
   "static/js/1.54eb6dea.chunk.js.map": "/Gallery-project/static/js/1.54eb6dea.chunk.js.map",
@@ -10,9 +10,9 @@
   "static/media/logo.svg": "/Gallery-project/static/media/logo.8eed106c.svg",
   "static/media/switcherLightTheme.svg": "/Gallery-project/static/media/switcherLightTheme.3d03312b.svg",
   "static/media/switcherDarkTheme.svg": "/Gallery-project/static/media/switcherDarkTheme.ad395d8d.svg",
+  "static/css/main.5678bd06.chunk.css.map": "/Gallery-project/static/css/main.5678bd06.chunk.css.map",
   "static/css/1.29296322.chunk.css.map": "/Gallery-project/static/css/1.29296322.chunk.css.map",
-  "static/css/main.3e8ee7c5.chunk.css.map": "/Gallery-project/static/css/main.3e8ee7c5.chunk.css.map",
   "index.html": "/Gallery-project/index.html",
-  "precache-manifest.d5c44df31d52c1030c8597665be60ad3.js": "/Gallery-project/precache-manifest.d5c44df31d52c1030c8597665be60ad3.js",
+  "precache-manifest.e4bcf200873696df8975533347f6341d.js": "/Gallery-project/precache-manifest.e4bcf200873696df8975533347f6341d.js",
   "service-worker.js": "/Gallery-project/service-worker.js"
 }
