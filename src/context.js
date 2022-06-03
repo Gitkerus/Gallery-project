@@ -1,9 +1,9 @@
 import React, { useState, useContext, useCallback, useEffect } from "react";
+import { loadAuthors, loadLocations } from "./Api/apiRequests";
+import { baseUrl } from "./Constants/constants";
 
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
-  const baseUrl = "https://test-front.framework.team";
-
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [currentAuthor, setCurrentAuthor] = useState("Author");
   const [currentLocation, setCurrentLocation] = useState("Location");
@@ -14,32 +14,29 @@ const AppProvider = ({ children }) => {
   // Fetch
   const [authors, setAuthors] = useState([]);
   const getAuthors = useCallback(async () => {
-    const response = await fetch(baseUrl + "/authors");
-    const authors = await response.json();
-
-    setAuthors(authors);
-  }, [baseUrl]);
+    const data = await loadAuthors();
+    setAuthors(data);
+  }, []);
 
   useEffect(() => {
     getAuthors();
-  }, [baseUrl, getAuthors]);
+  }, [getAuthors]);
 
   const [locations, setLocations] = useState([]);
   const getLocations = useCallback(async () => {
-    const response = await fetch(baseUrl + "/locations");
-    const locations = await response.json();
+    const data = await loadLocations();
 
-    const correctLocations = locations.map((item) => ({
+    const correctLocations = data.map((item) => ({
       ...item,
       name: item.location,
     }));
 
     setLocations(correctLocations);
-  }, [baseUrl]);
+  }, []);
 
   useEffect(() => {
     getLocations();
-  }, [baseUrl, getLocations]);
+  }, [getLocations]);
 
   return (
     <AppContext.Provider

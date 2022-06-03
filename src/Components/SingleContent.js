@@ -1,14 +1,9 @@
 import React from "react";
+
+import { baseUrl } from "../Constants/constants";
 import { useGlobalContext } from "../context";
 
-function SingleContent({
-  authorId,
-  created,
-  imageUrl,
-  locationId,
-  name,
-  baseUrl,
-}) {
+function SingleContent({ authorId, created, imageUrl, locationId, name }) {
   const { authors, locations } = useGlobalContext();
   const newAuthor = authors.find((item) => item.id === authorId);
   const newLocation = locations.find((item) => item.id === locationId);

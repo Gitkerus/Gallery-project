@@ -17,10 +17,7 @@ function SearchBars() {
     setInputNameValue,
   } = useGlobalContext();
 
-  // onChange/onClick
-
-  const handleOnClose = () =>
-    console.log("вызов функции принимающей новые параметры к fetch");
+  // Компонент Range и его принимаемая функция onClose не работают. Она срабатывает не только при закрытии контейнера Range, но и  при нажатии на любой компонент фильтрации. Предположительно где то внутри использован хук с аутсайд кликом, как обойти эту проблему я так и не понял
 
   return (
     <section className="filters__box">
@@ -49,8 +46,8 @@ function SearchBars() {
       <Range
         isDarkTheme={isDarkTheme}
         className="filters__box__single"
-        onClose={handleOnClose}
         placeholder="Created"
+        onClose={() => {}}
       >
         <RangeInputs />
       </Range>
