@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "88f52327c8cd5ce96391",
+    "revision": "9fe7c32b7ec10f0b3ca3",
     "url": "/Gallery-project/static/css/main.a3ff81d9.chunk.css"
   },
   {
-    "revision": "88f52327c8cd5ce96391",
-    "url": "/Gallery-project/static/js/main.88f52327.chunk.js"
+    "revision": "9fe7c32b7ec10f0b3ca3",
+    "url": "/Gallery-project/static/js/main.9fe7c32b.chunk.js"
   },
   {
     "revision": "638659f8d874cbbf970e",
@@ -20,23 +20,23 @@ self.__precacheManifest = [
     "url": "/Gallery-project/static/js/runtime~main.c597e58a.js"
   },
   {
-    "revision": "8eed106c8f8d4dd99b0088afd9c23eb9",
-    "url": "/Gallery-project/static/media/logo.8eed106c.svg"
+    "revision": "d0a2eac304ddbbc4a61fb40d9ba31d41",
+    "url": "/Gallery-project/static/media/logo.d0a2eac3.svg"
   },
   {
-    "revision": "3d03312baa5c37cf2a87504fe37e233d",
-    "url": "/Gallery-project/static/media/switcherLightTheme.3d03312b.svg"
+    "revision": "531b0cd0091714a97f110748707e0258",
+    "url": "/Gallery-project/static/media/switcherLightTheme.531b0cd0.svg"
   },
   {
-    "revision": "ad395d8decd89dce04c4df9cc2ed0a57",
-    "url": "/Gallery-project/static/media/switcherDarkTheme.ad395d8d.svg"
+    "revision": "ffd9ce75979413647300dcf3cebf4c84",
+    "url": "/Gallery-project/static/media/switcherDarkTheme.ffd9ce75.svg"
   },
   {
     "revision": "bb25791cb388f046ca7bb10deb452594",
     "url": "/Gallery-project/static/media/noMatchesFound.bb25791c.jpg"
   },
   {
-    "revision": "6a9955ec30947629c27567d2d7baf6a2",
+    "revision": "a2904070071afe0227d2ab46b8cc57ee",
     "url": "/Gallery-project/index.html"
   }
 ];
