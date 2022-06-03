@@ -17,7 +17,9 @@ function SearchBars() {
     setInputNameValue,
   } = useGlobalContext();
 
-  // Компонент Range и его принимаемая функция onClose не работают. Она срабатывает не только при закрытии контейнера Range, но и  при нажатии на любой компонент фильтрации. Предположительно где то внутри использован хук с аутсайд кликом, как обойти эту проблему я так и не понял
+  // Компонент Range и его принимаемая функция onClose не работают. Она срабатывает не только при закрытии контейнера Range, но и  при нажатии на любой компонент фильтрации. Предположительно где то внутри использован хук с аутсайд кликом, как обойти эту проблему не переписывая компоненты библиотеки я так и не понял.
+
+  // В Макете Figma были показаны иконки "крестик" для сброса фильтрации, в готовой библиотеке их не оказалось, а писать компоненты самому с нуля пока-что слишком мало опыта и заняло бы слишком много времени, так что я реализовал сброс фильтраций селектов Authors и Locations дополнительными элементами с соотвествующими названиями в конце раскрывающихся списков.
 
   return (
     <section className="filters__box">
@@ -31,14 +33,20 @@ function SearchBars() {
       />
       <Select
         isDarkTheme={isDarkTheme}
-        options={authors}
+        options={authors.concat({
+          name: "Author",
+          id: 10,
+        })}
         onChange={setCurrentAuthor}
         value={currentAuthor}
         className="filters__box__single"
       />
       <Select
         isDarkTheme={isDarkTheme}
-        options={locations}
+        options={locations.concat({
+          name: "Location",
+          id: 23,
+        })}
         onChange={setCurrentLocation}
         value={currentLocation}
         className="filters__box__single"
