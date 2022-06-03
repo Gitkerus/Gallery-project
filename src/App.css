@@ -90,8 +90,7 @@
 
 /* Блок галлереи картин */
 .content__box {
-  margin: 45px 20px;
-  margin-bottom: 30px;
+  margin: 10px 20px;
 }
 .single__content {
   position: relative;
