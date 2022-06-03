@@ -56,7 +56,7 @@ function ContentList() {
 
   const findPagesAmount = useCallback(async () => {
     const data = await loadFilteredPaintings();
-    const pages = Math.ceil(data.length / 12);
+    const pages = Math.ceil(data.length / pageObjectsLimit);
     setPagesAmount(pages);
   }, [loadFilteredPaintings]);
 

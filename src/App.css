@@ -137,10 +137,7 @@
 
 /* Блок смены страниц */
 .pagination__box {
-  margin: 0 20px 0;
-}
-.Pagination {
-  width: 280px;
+  margin: 0 auto 0;
 }
 .PaginationPage {
   font-weight: 500;
