@@ -5,9 +5,7 @@
 }
 
 .appBox {
-  display: flex;
   min-height: 100vh;
-  flex-direction: column;
 }
 .darkTheme {
   background-color: #000000;
@@ -28,10 +26,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin: 0 20px 25px;
-}
-.header img {
-  margin-top: 25px;
+  margin: 25px 20px;
 }
 
 /* Блок кнопок фильтрации */
@@ -137,24 +132,23 @@
 
 /* Блок смены страниц */
 .pagination__box {
-  margin: 0 auto 0;
+  margin: 0 20px 34px;
+}
+.Pagination {
+  width: 280px;
 }
 .PaginationPage {
   font-weight: 500;
   font-size: 18px;
   height: 41px;
   width: 41px;
-  margin-bottom: 34px;
 }
 
 /* Адаптив */
 
 @media screen and (min-width: 768px) {
   .header {
-    margin: 0 34px 35px;
-  }
-  .header img {
-    margin-top: 35px;
+    margin: 35px 34px;
   }
   .filters__box {
     display: flex;
@@ -178,7 +172,7 @@
     justify-content: flex-start;
     align-content: flex-start;
     flex-wrap: wrap;
-    margin: 0px 34px;
+    margin: 0px 34px 35px;
     gap: 20px 20px;
   }
   .single__content {
@@ -187,23 +181,20 @@
     margin: 0 0;
   }
   .pagination__box {
-    margin: 35px 34px 0;
-  }
-  .PaginationPage {
-    margin-bottom: 54px;
+    margin: 0 34px 54px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .header {
-    margin: 0 42px 35px;
+    margin: 35px 42px;
   }
   .filters__box {
     margin: 0 42px 45px;
     gap: 20px;
   }
   .content__box {
-    margin: 0px 42px;
+    margin: 0px 42px 40px;
   }
   .single__content {
     height: 230px;
@@ -211,16 +202,13 @@
     margin: 0 0;
   }
   .pagination__box {
-    margin: 40px 42px 0;
-  }
-  .PaginationPage {
-    margin-bottom: 62px;
+    margin: 0 42px 62px;
   }
 }
 
 @media screen and (min-width: 1366px) {
   .header {
-    margin: 0 123px 35px;
+    margin: 35px 123px;
   }
   .filters__box {
     margin: 0 123px 45px;
@@ -235,16 +223,13 @@
     margin: 0 10px;
   }
   .content__box {
-    margin: 0px 123px;
+    margin: 0px 123px 40px;
   }
   .single__content {
     height: 275px;
     margin: 0 0;
   }
   .pagination__box {
-    margin: 40px 123px 0;
-  }
-  .PaginationPage {
-    margin-bottom: 97px;
+    margin: 0 123px 97px;
   }
 }
